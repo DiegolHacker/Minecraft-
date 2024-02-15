@@ -1,15 +1,81 @@
 /*Selector de etiqueta*/
 
 body{
-    color:rgb(0, 0, 0);
+    color:#555;
+    margin: 0 auto;
+    max-width: 60em;
+    font-family: "Helvetica", "Arial", sans-serif;
+    line-height: 1.5;
+    padding: 4em 1em;
 }
 
-/*Selector de clase*/
-.red {
-    color: rgb(235, 148, 148);
+h3, strong {
+  color: #333;
 }
+
+h1, h2{
+    color: #000
+}
+
+h2 {
+    margin-top: 1em;
+    padding-top: 1em;
+}
+
+a {
+    color: #9c56c5;
+}
+
+  
+code, pre {
+    background: #f5f7f9;
+    border-bottom: 1px solid #d8dee9;
+    color: #a7adba;
+}
+  
+pre {
+    border-left: 2px solid #69c;
+}
+
+
+
+/*Selector de clase*/
+.pregunta {
+    color: rgb(96, 66, 97);
+}
+
+.boton {
+    background-color:#0a0a0a;
+    color: #f0f0f0;
+    border:none;
+    border-radius:10px;
+    margin: 6px 4px;
+    width: 250px;
+    transition-duration: 0.4s;
+    text-align: center;
+    cursor: pointer;
+}
+
+.boton1 {
+    border: 2px solid #000000;
+    color: black;
+    background-color: white;
+}
+
+.boton1:hover{
+    background-color: #000;
+    color: #ffffff;
+
+}
+
+/*.boton1:focus {
+    border: 2px solid #ffffff;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+}*/
 
 /*Selector de id*/
 #jugadores {
     color:rgb(138, 172, 172);
+    font-size: 24px;
 }

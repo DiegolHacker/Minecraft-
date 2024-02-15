@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Taller 1</title>
-        <link rel="stylesheet" href="estilo.css">
+        <link rel="stylesheet" href="minestilo.css">
     </head>
     
     <body>
@@ -17,9 +17,10 @@
         </header>
 
         <br>
-        <p>¿Tú cómo te llamas? <input></input> </p>
+        <p class="pregunta">¿Tú cómo te llamas? <input></input> </p>
       
         <main>
+            <p><button class="boton boton1">Modo Oscuro</button></p>
 
             <h2>Intereses</h2>
             <p>Cocino mucho para mi y mi familia, me gusta mucho escuchar música clásica y metal, me gusta mcuho tocar el piano.</p>
@@ -48,13 +49,15 @@
                 </tbody>
             </table>
         
-            <br> Selecciona tu color: <input type="color">
+            <p class="pregunta">¿Cuál es tu color favorito? <input type="color"></p> 
             
-            <h2>Preguntas</h2>
+            <h2>Preguntas Lab 1</h2>
             <p><h3>¿Cuál es la diferencia entre Internet y la World Wide Web?</h3>
                 <p>El internet es una red de computadoras conectadas que transmiten información entre sí, la WWW es una serie de páginas web que existen encima del internet.</p>
+
             <p><h3>¿Cuáles son las partes de un URL?</h3>
                 <p>Protocolo, subdominio, dominio, TLD, carpeta, página, etiqueta.</p>
+
             <p><h3>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</h3>
                 <p>Get: Recibir información del servidor.</p>
                 <p>Head: Recibir solo el encabezado de la página.</p>
@@ -62,38 +65,77 @@
                 <p>Put: Actualizar un dato del servidor o crear un dato nuevo.</p>
                 <p>Patch: Actualizar un dato de forma parcial.</p>
                 <p>Delete: Eliminar información.</p>
+
             <p><h3>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</h3>
                 <p>El método post ya que este método cifra en automático los datos por lo que son seguros y tiene una robustes y capacidad suficiente para enviar toda la informaicón.</p>
+
             <p><h3>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</h3>
                 <p>Utiliza el método Get.</p>
+            
             <p><h3>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</h3>
                 <p>Que todo salió bien, el servidor recibió la solicitud y la proceso de manera correcta.</p>
+            
             <p><h3>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</h3>
                 <p>Sí debido a que es un error que aparece cuando un contenido no existe, y si un usuario común lo recibe es debido a una url desactualizada que lleva a un contenido eliminado.</p>
+           
             <p><h3>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</h3>
                 <p>Sí debido a que es un error interno del servidor, y aunque el contenido existe y es accesible por el usuario no puede ser mostrado.</p>
+            
             <p><h3>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</h3>
-                <p>Que se encuentra en desuso debido a que existen métodos mejores para hacer la misma función, y se recomienda evitarlos ya que eventualmente pueden dejar de funcionar. el método font y center se encuentran obsoletos ya que se recomienda dar ese tipo de formato al texto a través de CSS.</p>
+                <p>Que se encuentra en desuso debido a que existen métodos mejores para hacer la misma función, y se recomienda evitarlos ya que eventualmente pueden dejar de funcionar. 
+                    el método font y center se encuentran obsoletos ya que se recomienda dar ese tipo de formato al texto a través de CSS.</p>
+            
             <p><h3>¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</h3>
-                <p>HTML5 cuenta con métodos que dan un formato más entendible, como header, article, etc. También cuenta con mejores formularios con espacios dedicados a cada tipo de dato, como email que produce un cuadro de entrada sólo para correos electrónicos. La compatibilidad con celulares es mucho más amplia, y cuenta con tecnologías de forma nativa como reconocimiento de voz y contenido multimedia a más de 60 fps.</p>
+                <p>HTML5 cuenta con métodos que dan un formato más entendible, como header, article, etc. También cuenta con mejores formularios con espacios dedicados a cada tipo de dato, 
+                    como email que produce un cuadro de entrada sólo para correos electrónicos. La compatibilidad con celulares es mucho más amplia, y cuenta con tecnologías de forma nativa 
+                    como reconocimiento de voz y contenido multimedia a más de 60 fps.</p>
+            
             <p><h3>¿Qué componentes de estructura y estilo tiene una tabla?</h3>
-                <p>De estructura existen th (Table Head), tr (Table Row), y td (Table data) que permiten llenar las celdas de una tabla con información, y de estilo thead, tbody, tfooter que determinan en que zona de la tabla se encuentran las celdas. </p>
+                <p>De estructura existen th (Table Head), tr (Table Row), y td (Table data) que permiten llenar las celdas de una tabla con información, y de estilo thead, tbody,
+                     tfooter que determinan en que zona de la tabla se encuentran las celdas. </p>
+            
             <p><h3>¿Cuáles son los principales controles de una forma HTML5?</h3>
                 <p>Input, Fieldset, Output, Submit, Radio, Checkbox, Drop down list, Color, Date.</p>
+            
             <p><h3>¿Qué tanto soporte HTML5 tiene el navegador que utilizas?</h3>
                 <p>536 de 571 puntos, uso OperaGX</p>
+            
             <p><h3>¿Cuál es el ciclo de vida de los sistemas de información?</h3>
                 <p>Planificación, análisis, diseño, implementación, mantenimiento</p>
+            
             <p><h3>¿Cuál es el ciclo de desarrollo de sistemas de información?</h3>
                 <p>Investigación y planificación, análisis, diseño, implementación, pruebas, despliegue, mantenimeinto, evaluación, iteración.</p>
 
+
+            <h2>Preguntas Lab 2</h2>
+            
+            <p><h3>Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS? </h3></p>
+                <p>Se debe evitar ya que vuelve al código difícil de entender y debugear ya que deja de ser intuitivo que valor de las propiedades debe mostrarse, solo se debe usar en casos completamente 
+                    necesarios como cuando está prohibido editar el código original y debemos añadir formato a una página ya existente.</p>
+            
+            <p><h3>Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado?</h3></p>
+                <p>Porque puede contener derechos de autor y si la usas incorrectamente puede tener consecuencias legales.</p>
+            
+            <p><h3>Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt?</h3></p>
+                <p>Depende completamente del contexto donde el sitio web vaya a ser utilizado. Si la resolución es fija, por ejemplo que sea la página de bienvenida 
+                para un dispositivo como una consola portátil, es una opción viable tener una unidad absoluta como lo son los pixeles pues las condiciones de visualización 
+                no cambiaran, pero si el tamaño de las pantallas donde se verá el contenido pueden cambiar, es mucho más recomendable usar unidades relativas para no perder
+                 la noción del espacio y las proporciones de la página, evitando que se vea mal.</p>
+            
+            <p><h3>¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio?</h3></p>
+                <p>Debido a que es una versión optimizada que cumple con las mismas funciones que el código original pero eliminando las partes innecesarias, 
+                como comentarios o indentación, lo que lo hace más rápido de correr en un servidor, y debdio a que en una página web puede haber miles de lineas para 
+                darle estilo estas optimizaciones se hacen más notorias.</p>
         </main>
 
     
 
-        <footer class="red">
+        <footer> 
+            <br>
             <p>Use <a href="https://code.visualstudio.com">Visual Studio Code</a> como editor de HTML</p>
-            <p></p>
+            <p><h2>Referencias</h2></p>
+            <p>W3schools, (2024). CSS The !important Rule. Extraído de: https://www.w3schools.com/css/css_important.asp</p>
+            <p>W3schools, (2024). HTML button Tag. Extraído de: https://www.w3schools.com/tags/tag_button.asp</p>
         </footer>
 
     </body>  
