@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Taller 1</title>
+        <link rel="stylesheet" href="estilo.css">
     </head>
     
     <body>
@@ -25,7 +26,6 @@
             <p>Tambien me encanta ver anime y jugar videojuegos, mis favoritos son LoL, Terraria, Valorant, Minecraft, Pokemon, y Cities Skylines.</p>
             <p>Mi mayor afición es mi novia, me gusta mucho salir con ella y darle muchos regalos.</p>
 
-            <br><iframe width="560" height="315" src="https://www.youtube.com/embed/kGCoTH2o37k?si=SPJWfRbuccwtYjhV" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <br><iframe width="560" height="315" src="https://www.youtube.com/embed/q-NoDGhyQ8A?si=hfMjOvdyByKP8pX7" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 
         
@@ -33,7 +33,7 @@
                 <thead>
                 <tr>
                     <th>Año</th>
-                    <th>Jugadores</th>
+                    <th id="jugadores">Jugadores</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -49,8 +49,52 @@
             </table>
         
             <br> Selecciona tu color: <input type="color">
-        
+            
+            <h2>Preguntas</h2>
+            <p><h3>¿Cuál es la diferencia entre Internet y la World Wide Web?</h3>
+                <p>El internet es una red de computadoras conectadas que transmiten información entre sí, la WWW es una serie de páginas web que existen encima del internet.</p>
+            <p><h3>¿Cuáles son las partes de un URL?</h3>
+                <p>Protocolo, subdominio, dominio, TLD, carpeta, página, etiqueta.</p>
+            <p><h3>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</h3>
+                <p>Get: Recibir información del servidor.</p>
+                <p>Head: Recibir solo el encabezado de la página.</p>
+                <p>Post: Subir información al servidor.</p>
+                <p>Put: Actualizar un dato del servidor o crear un dato nuevo.</p>
+                <p>Patch: Actualizar un dato de forma parcial.</p>
+                <p>Delete: Eliminar información.</p>
+            <p><h3>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</h3>
+                <p>El método post ya que este método cifra en automático los datos por lo que son seguros y tiene una robustes y capacidad suficiente para enviar toda la informaicón.</p>
+            <p><h3>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</h3>
+                <p>Utiliza el método Get.</p>
+            <p><h3>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?</h3>
+                <p>Que todo salió bien, el servidor recibió la solicitud y la proceso de manera correcta.</p>
+            <p><h3>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</h3>
+                <p>Sí debido a que es un error que aparece cuando un contenido no existe, y si un usuario común lo recibe es debido a una url desactualizada que lleva a un contenido eliminado.</p>
+            <p><h3>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</h3>
+                <p>Sí debido a que es un error interno del servidor, y aunque el contenido existe y es accesible por el usuario no puede ser mostrado.</p>
+            <p><h3>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.</h3>
+                <p>Que se encuentra en desuso debido a que existen métodos mejores para hacer la misma función, y se recomienda evitarlos ya que eventualmente pueden dejar de funcionar. el método font y center se encuentran obsoletos ya que se recomienda dar ese tipo de formato al texto a través de CSS.</p>
+            <p><h3>¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</h3>
+                <p>HTML5 cuenta con métodos que dan un formato más entendible, como header, article, etc. También cuenta con mejores formularios con espacios dedicados a cada tipo de dato, como email que produce un cuadro de entrada sólo para correos electrónicos. La compatibilidad con celulares es mucho más amplia, y cuenta con tecnologías de forma nativa como reconocimiento de voz y contenido multimedia a más de 60 fps.</p>
+            <p><h3>¿Qué componentes de estructura y estilo tiene una tabla?</h3>
+                <p>De estructura existen th (Table Head), tr (Table Row), y td (Table data) que permiten llenar las celdas de una tabla con información, y de estilo thead, tbody, tfooter que determinan en que zona de la tabla se encuentran las celdas. </p>
+            <p><h3>¿Cuáles son los principales controles de una forma HTML5?</h3>
+                <p>Input, Fieldset, Output, Submit, Radio, Checkbox, Drop down list, Color, Date.</p>
+            <p><h3>¿Qué tanto soporte HTML5 tiene el navegador que utilizas?</h3>
+                <p>536 de 571 puntos, uso OperaGX</p>
+            <p><h3>¿Cuál es el ciclo de vida de los sistemas de información?</h3>
+                <p>Planificación, análisis, diseño, implementación, mantenimiento</p>
+            <p><h3>¿Cuál es el ciclo de desarrollo de sistemas de información?</h3>
+                <p>Investigación y planificación, análisis, diseño, implementación, pruebas, despliegue, mantenimeinto, evaluación, iteración.</p>
+
         </main>
+
+    
+
+        <footer class="red">
+            <p>Use <a href="https://code.visualstudio.com">Visual Studio Code</a> como editor de HTML</p>
+            <p></p>
+        </footer>
 
     </body>  
 </html>

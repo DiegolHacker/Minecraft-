@@ -1,0 +1,15 @@
+/*Selector de etiqueta*/
+
+body{
+    color:rgb(0, 0, 0);
+}
+
+/*Selector de clase*/
+.red {
+    color: rgb(235, 148, 148);
+}
+
+/*Selector de id*/
+#jugadores {
+    color:rgb(138, 172, 172);
+}
