@@ -93,3 +93,44 @@ console.log(inverso(numeroOG));
 
 const objeto = {atributo: "valor", atributo2: "valor2"};
 objeto.atributo3 = "3";
+
+
+//Problema para calcular la atracción gravitatoria y el tiempo que tardarán en colisionar 2 objetos d ela clase planeta.
+
+class Planeta{
+    constructor(masa, posicion) {
+        this.masa = masa;
+        this.posicion = posicion;
+    }
+
+    get_masa(){
+        return this.masa;
+    }
+
+    get_posicion(){
+        return this.posicion;
+    }
+
+    campo(distancia){
+        let campoe = (this.masa*0.0000000000667)/(distancia**2);
+        return campoe;
+    }
+
+
+    
+}
+
+function atraccion(planeta1, planeta2){
+    let fuerza = (planeta1.masa*planeta2.masa*0.0000000000667)/((planeta1.posicion-planeta2.posicion)**2);
+    return fuerza;
+}
+
+
+const Tierra = new Planeta(5972000000000000000000000, 1500000000000);
+const Marte = new Planeta(639000000000000000000000, 228000000000);
+
+atrTM = atraccion(Tierra, Marte)
+
+
+console.log(Tierra.campo(20000))
+console.log("Atracción entre la tierra y marte: " + atrTM + "N")
