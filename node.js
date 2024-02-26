@@ -20,15 +20,8 @@ for (let item of arreglo){
 
 console.log("Esto se imprime antes de los números");
 
-//http es un modulo node con todas las funciones de un servidor web
-const http = require("http") //aqui ya hay un servidor completo 💀💀
 
-const server = http.createServer((request, response) => { //request tiene la informacion de la request al servidor, response tiene la funcion que quiero ejecutar como respuesta a esa request.
-    
-    console.log(request.url);  //request.url para que te de la url a la que intentaron acceder, y asi.
-    if(request.url == "/"){
-        response.setHeader("Content-Type", "text/html");
-        response.write(`
+const header = `
         <!DOCTYPE html>
         <html>
         <head>
@@ -98,8 +91,43 @@ const server = http.createServer((request, response) => { //request tiene la inf
                 </div>
                 </div>
             </nav>
+            <section class="section">
+                <div class="container">
+`;
 
 
+const footer = `
+                </div>  
+                            
+            </section>
+
+
+
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>
+                        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+                        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+                        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+                    </p>
+                </div>  
+            </footer>
+        </body>
+    </html>
+`;
+
+
+
+//http es un modulo node con todas las funciones de un servidor web
+const http = require("http") //aqui ya hay un servidor completo 💀💀
+
+const server = http.createServer((request, response) => { //request tiene la informacion de la request al servidor, response tiene la funcion que quiero ejecutar como respuesta a esa request.
+    
+    console.log(request.url);  //request.url para que te de la url a la que intentaron acceder, y asi.
+    if(request.url == "/"){
+        response.setHeader("Content-Type", "text/html");
+        response.write(header);
+        response.write(`
             <section class="section">
                 <div class="container">
                     <h1 class="title">
@@ -222,21 +250,10 @@ const server = http.createServer((request, response) => { //request tiene la inf
                         </div>
 
                     </div>
-                </div>  
-                
-            </section>
 
+        `);
 
-
-            <footer class="footer">
-                <div class="content has-text-centered">
-                    <p>
-                        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-                        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-                        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-                    </p>
-                </div>
-            </footer>
+        response.write(`
             <script>const boton = document.getElementById("boton_construir");
 
 
@@ -278,110 +295,51 @@ const server = http.createServer((request, response) => { //request tiene la inf
             
             destruir_casa() //le quite el src="" en el html original y el class="buton is-primary" porque al ejecutar esto se asignan automaticamente, entonces se queda mas limpio el html. Ya no es necesaria la linea de abajo porque se asigna al ejecutar esto.
             // boton.onclick = construir_casa</script>
-        </body>
-        </html>
-        `);
+            `)
+            response.write(footer);
     }
+
     else if(request.url == "/construir"){
 
+        response.write(header);
+        response.write(`
+            <title>Agregar una construcción</title>
+            <h1 class="title">Ups, la aldea que buscas dont exist</h1>
+            <form action="construir" method="POST">
+                <label for="nombre">Nombre</label><br>
+                <input id=nombre type="text" class="input"></input><br>
+                <label for="imagen">Imagen</label><br>
+                <input id=imagen type="text" class="input"></input><br>
+                <input class="button is-success" type="submit" value="Construir"></input>
+            </form>
+        `)
+
+
+        response.write(footer);
+        response.end();
+
     }
+
+    else if(request.url == "/construir" && request.method == "POST"){
+        request.on("data", (dato) =>{
+            console.log(dato);
+        })
+    }
+
     else{ //error 404
 
         response.statusCode = 404;
         response.setHeader("Content-Type", "text/html");
+        response.write(header);
         response.write(`
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <title>Lab 5</title>
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-        </head>
-        <body>
-            <nav class="navbar" role="navigation" aria-label="main navigation">
-                <div class="navbar-brand">
-                <a class="navbar-item" href="https://bulma.io">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1280px-International_Pok%C3%A9mon_logo.svg.png" width="76" height="28">
-                </a>
-            
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-                </div>
-            
-                <div id="navbarBasicExample" class="navbar-menu">
-                <div class="navbar-start">
-                    <a class="navbar-item">
-                    Home
-                    </a>
-            
-                    <a class="navbar-item">
-                    Documentation
-                    </a>
-            
-                    <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">
-                        More
-                    </a>
-            
-                    <div class="navbar-dropdown">
-                        <a class="navbar-item">
-                        About
-                        </a>
-                        <a class="navbar-item">
-                        Jobs
-                        </a>
-                        <a class="navbar-item">
-                        Contact
-                        </a>
-                        <hr class="navbar-divider">
-                        <a class="navbar-item">
-                        Report an issue
-                        </a>
-                    </div>
-                    </div>
-                </div>
-            
-                <div class="navbar-end">
-                    <div class="navbar-item">
-                    <div class="buttons">
-                        <a class="button is-primary">
-                        <strong>Sign up</strong>
-                        </a>
-                        <a class="button is-light">
-                        Log in
-                        </a>
-                    </div>
-                    </div>
-                </div>
-                </div>
-            </nav>
-
-
-            <section class="section">
-                <div class="container">
-                    <h1 class="title">
+                          <h1 class="title">
                         Ups, la aldea que estás buscando no existe.
                     </h1>
                     <p class="subtitle">
                         Error <strong>404</strong>!
                     </p>
-            </section>
-            <footer class="footer">
-                <div class="content has-text-centered">
-                    <p>
-                        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-                        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-                        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-                    </p>
-                </div>
-            </footer>
-        </body>
-        </html>
         `);
+        response.write(footer);
         response.end();
         
     }
@@ -389,5 +347,21 @@ const server = http.createServer((request, response) => { //request tiene la inf
     
     response.end(); //envia la respuesta desde el servidor.
 });
+
+const datos = []
+
+request.on("data", (dato) => {
+    console.log(dato);
+    datos.push(dato);
+})
+
+return request.on("end", () =>{
+    const datos_completos = Buffer.concat(datos).toString();
+    console.log(datos_completos);
+    const nombre = datos_completos.split("&")[0].split("=")[1] //da datos como nombre=casa&imagen=askdbabsd entonces partimos por el & y tomamos lo que esta a la derecha del =
+    console.log(nombre);
+    const imagen = datos_completos.split("&")[1].split("=")[1] 
+    return response.end();
+})
 
 server.listen(3000); //mantiene al servidor escuchando peticiones del cliente, revisa si hay nuevas peticiones en el puerto 3000. Ver nomas que no sea un puerto ya usado por otras apps.
