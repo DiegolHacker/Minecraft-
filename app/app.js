@@ -1,8 +1,10 @@
 const express = require("express");
 const app = express();
 
-const path = require('path');
+app.set('view engine', 'ejs'); //variable global "view engine" asignada al valor "ejs" para decirle que vamos a usar ejs
+app.set('views', 'views'); //decir que las views van a etsra en la carpeta views.
 
+const path = require('path');
 app.use(express.static(path.join(__dirname, 'public'))); //establecer la carpeta publica
 
 const bodyParser = require("body-parser");
