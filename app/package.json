@@ -1,0 +1,20 @@
+{
+  "name": "maincra",
+  "version": "1.0.0",
+  "description": "prueba maincra construir",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiegolHacker/repo-A01705506.git"
+  },
+  "author": "Diegol",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DiegolHacker/repo-A01705506/issues"
+  },
+  "homepage": "https://github.com/DiegolHacker/repo-A01705506#readme"
+}

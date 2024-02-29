@@ -1,0 +1,1 @@
+la carpeta de archivos que quiero que todos trengan acceso normalmente s ellama public o www

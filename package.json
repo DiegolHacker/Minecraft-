@@ -1,0 +1,24 @@
+{
+  "name": "diegorepo",
+  "version": "1.0.0",
+  "description": "Diego Isaac Fuentes Juvera\r A01705506",
+  "main": "node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiegolHacker/repo-A01705506.git"
+  },
+  "author": "Diego Fuentes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DiegolHacker/repo-A01705506/issues"
+  },
+  "homepage": "https://github.com/DiegolHacker/repo-A01705506#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.3",
+    "nodemon": "^3.1.0"
+  }
+}
