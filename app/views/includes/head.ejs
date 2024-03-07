@@ -56,12 +56,23 @@
                   <div class="navbar-end">
                     <div class="navbar-item">
                       <div class="buttons">
+                      <% if (username == ""){ %>
                         <a class="button is-primary">
                           <strong>Sign up</strong>
                         </a>
-                        <a class="button is-light">
+                        <a href="/users/login" class="button is-light">
                           Log in
                         </a>
+                      <% } else { %>
+                        <span>
+                          Hola <strong><%= username %> | </strong>
+                        </span>
+                        <a href = "/users/logout" class="button ">
+                          Log out 
+                        </a>
+                     <% } %>
+
+
                       </div>
                     </div>
                   </div>

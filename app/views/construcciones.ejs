@@ -1,5 +1,4 @@
-
-<%- include("includes/head.ejs") %>
+<%- include("includes/head.ejs", {username: username}) %>
 
 <h1 class="title">Hola mundo de Minecraft!</h1>
 
@@ -38,8 +37,13 @@
             </div>
         </div>
     <% } %>
+
+</div>
+    <% if(ultima_construccion != "") { %>
+        <div>La última construcción fue <%=ultima_construccion%>.</div>
+    <% } %>
   
 
-    </div>
+    
 
 <%- include("includes/foot.ejs") %>

@@ -1,0 +1,14 @@
+<%- include("includes/head.ejs", {username: username}) %>
+
+    <h1 class = title>Bienvenido</h1>
+        <form action="users/login" method="POST">
+            <label class="label" for="username">Username</label>
+            <input name="username" id="username" type="text" class="input"><br>
+            <label class="label" for="password">Password</label>
+            <input name="password" id="password" type="password" class="input"><br><br>
+            <input class="button is-success" type="submit" value="Login">
+        </form>
+    </div>
+</section>
+
+<% include("includes/foot.ejs") %>
