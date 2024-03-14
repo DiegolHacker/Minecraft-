@@ -31,7 +31,7 @@ CREATE TABLE `construccion` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `username_UNIQUE` (`username`),
   CONSTRAINT `username` FOREIGN KEY (`username`) REFERENCES `usuario` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,6 +40,7 @@ CREATE TABLE `construccion` (
 
 LOCK TABLES `construccion` WRITE;
 /*!40000 ALTER TABLE `construccion` DISABLE KEYS */;
+INSERT INTO `construccion` VALUES (1,'casa','https://i.blogs.es/7cfcd0/casas-en-minecraft/1366_2000.jpeg','Diego','2024-03-07 16:27:01');
 /*!40000 ALTER TABLE `construccion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -51,10 +52,9 @@ DROP TABLE IF EXISTS `usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `usuario` (
-  `username` varchar(30) NOT NULL,
-  `Password` varchar(800) DEFAULT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(800) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`username`),
   UNIQUE KEY `Username_UNIQUE` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -65,6 +65,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+INSERT INTO `usuario` VALUES ('diego','e1234','2024-03-07 16:25:58');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -77,4 +78,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-03-07 10:06:36
+-- Dump completed on 2024-03-11 11:02:28
