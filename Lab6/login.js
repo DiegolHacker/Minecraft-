@@ -5,6 +5,7 @@ passwords de estado del arte, con la mejor experiencia para el usuario.*/
 const loginForm = document.getElementById("login_form");
 const loginButton = document.getElementById("boton_login");
 const titulo = document.getElementById("titulo")
+const carga = document.getElementById("carga")
 
 console.log(loginButton);
 console.log(loginForm);
@@ -48,4 +49,15 @@ const colorear = () => {
     titulo.style.color = "green";
 }
 
+const recolorear = () => {
+    titulo.style.color = "red";
+}
+
+const carga_terminada = () => {
+    carga.style.color = "green"
+}
+
 titulo.onmouseover = colorear
+titulo.onmouseout = recolorear
+
+carga.onload = carga_terminada

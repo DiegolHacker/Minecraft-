@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Laboratorio</title>
-        <link rel="stylesheet" href="estilo.css">
+        <link rel="stylesheet" href="css/estilo.css">
         
     </head>
     
@@ -153,6 +153,13 @@
             <p><h3>¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</h3>
                 <p>Si quieres volver a ejecutar la función, según el funcionamiento, debes reiniciar todos los contadores e inicializar de nuevo todas las variables. También cualquier elemento del código puede acceder a esas variables, lo que lo vuelve inseguro.</p>
 
+            <h2>Preguntas Lab 6</h2>     
+            <p><h3>¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?</h3>
+                <p>Para asegurarnos que los datos se almacenen correctamente en la base de datos, sin tipos de dato incorrecto o datos truncados por ser muy largos, para saber que los podremos operar de las formas correctas, para poder decirle al usuario en qué se equivocó, y por seguridad para no correr código arbitrario. </p>
+            <p><h3>¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?</h3>
+                <p>Desactivando js en el navegador, inyectando código en los formularios, mandando solicitudes al servidor directamente, editando el código html o js público.</p>
+            <p><h3>Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?</h3>
+                <p>Debido a que puede dar retroalimentación inmediata a los usuarios sobre si los datos que ingresaron son válidos o correctos, lo que mejora su experiencia. También puede mejorar la velocidad de respuesta al limitar la cantidad de información que se envía y procesa a solo la necesaria.</p>
 
         </main>
 
@@ -168,6 +175,6 @@
             <p>W3schools, (2024). HTML button Tag. Extraído de: https://www.w3schools.com/tags/tag_button.asp</p>
         </footer>
         
-        <script src="lab4js.js"></script>
+        <script src="js/lab4js.js"></script>
     </body>  
 </html>

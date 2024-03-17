@@ -105,3 +105,7 @@ a {
 .titulo{
     color: #000000;
 }
+
+#carga{
+    color: red;
+}
