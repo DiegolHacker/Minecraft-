@@ -1,4 +1,7 @@
-<%- include("includes/head.ejs", {username: username}) %>
+<%- include("includes/head.ejs", {
+        username: username,
+        permisos: permisos
+}) %>
 
 <h1 class = title><% if(registrar) { %>Bienvenido<% } else { %>Hola de nuevo<% } %></h1>
 

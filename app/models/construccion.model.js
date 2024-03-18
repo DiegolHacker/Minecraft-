@@ -9,7 +9,7 @@ module.exports = class Construccion {
 
     save() {
         return db.execute(
-            'INSERT INTO construccion (nombre, imagen, username) VALUES (?, ?, "Doc")',
+            'INSERT INTO construccion (nombre, imagen, username) VALUES (?, ?, "Diego")',
              [this.nombre, this.imagen]
         );
         

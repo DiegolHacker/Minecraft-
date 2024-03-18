@@ -9,6 +9,7 @@ exports.get_login = (request, response, next) => {
         registrar: false,
         error: error,
         csrfToken: request.csrfToken(),
+        permisos: request.session.permisos || [],
     }); //mandamos la plantilla llamada login.ejs
 
 };
@@ -22,11 +23,15 @@ exports.post_login = (request, response, next) => {
                 bcrypt.compare(request.body.password, user.password)
                     .then(doMatch => {
                         if (doMatch) {
-                            request.session.isLoggedIn = true;
-                            request.session.username = user.username;
-                            return request.session.save(err => {
-                                response.redirect('/construcciones');
-                            });
+                            Usuario.getPermisos(user.username).then(([permisos, fieldData]) => {
+                                request.session.isLoggedIn = true;
+                                request.session.permisos = permisos;
+                                console.log(request.session.permisos);
+                                request.session.username = user.username;
+                                return request.session.save(err => {
+                                    response.redirect('/construcciones');
+                                });
+                            }).catch((error) => {console.log(error);});
                         } else{
                             request.session.error = 'El usuario y/o contraseña son incorrectos.';
                             return response.redirect('/users/login');
@@ -58,8 +63,8 @@ exports.get_signup = (request, response, next) => {
         registrar: true,
         error: error,
         csrfToken: request.csrfToken(),
+        permisos: request.session.permisos || [],
     });
-    console.log("Iniciando registro")
 };
 
 exports.post_signup = (request, response, next) => {
@@ -67,7 +72,6 @@ exports.post_signup = (request, response, next) => {
     nuevo_usuario.save()
         .then(([rows, fieldData])=>{
             response.redirect("/users/login");
-            console.log("Registro exitoso")
         })
         .catch((error)=>{
             console.log(error);

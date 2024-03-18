@@ -181,6 +181,16 @@
                 <p>Autenticación biométrica: Se basan en una característica física del usuario leída a través de sensores para determinar si se trata del usuario, por ejemplo huellas dactilares, retina, reocnocimeinto facial, etc.</p>
             </main>
 
+            <h2>Preguntas Lab 19</h2>
+            <p><h3>¿En qué consiste el control de acceso basado en roles?</h3></p>
+                <p>Es un modelo de seguridad que se usa para restringir el acceso a información o funciones en un sistema dependeindo de los roles que tengan asignados los usuarios, que parten de sus responsabilidades dentro de una organización.</p>
+            <p><h3>Investiguen y describan 2 sistemas, uno que aplique RBAC y uno que no. Realicen un análisis de las ventajas y desventajas de cada uno con respecto al control de acceso.</h3></p>
+                <p>Microsoft Active Directory es un sistema para manejar directorios en una red de computadoras implementado en Windows e implementa RBAC a través de definir grupos de seguridad, o roles, con sus respectivos permisos y luego los usuarios son añadidos a estos grupos.</p>
+                <p>Como ventajas tiene que es un sistema centralizado y escalable, por lo que es fácil administrar los permisos de una gran cantidad de usuarios y modificar sus permisos en masa, esto también reduce el riesgo de cometer un error al ser casi imposible asignar un permiso que un usuario no debería tener sin un rol específico para ello.</p>
+                <p>Como desventajas es que puede ser más dificil establecer el sistema en un inicio, ya que puede ser necesario crear muchos roles que muy pocos usuarios usen. También es muy fácil hacer que un usuario tenga más permisos de los que necesita al asignarlo a un rol que no se ajusta totalmente a sus responsabilidades.</p>
+                <br><p>Para manejar los permisos de acceso a archivos en Linux tradicionalmente se asignan directamente estos permisos a cada usuario, en lugar de a un rol.</p>
+                <p>Esto tiene como ventaja que es un proceso mucho más sencillo y directo cuando solo existen muy pocos usuarios y queremos ser muy específicos en cuanto a que archivos pueden acceder, pues no se necesita de crear ni asignar roles.</p>
+                <p>De desventaja tiene que al querer escalar el sistema e incluir muchos usuarios se puede volver mucho m;as tardado el estar asignando permisos uno por uno para cada usuario. Además existe un mucho mayor riesgo de errores humanos al poder asignar un permiso que el usuario no debería tener</p>
     
 
     
