@@ -28,10 +28,8 @@ CREATE TABLE `construccion` (
   `imagen` varchar(400) NOT NULL,
   `username` varchar(30) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `username_UNIQUE` (`username`),
-  CONSTRAINT `username` FOREIGN KEY (`username`) REFERENCES `usuario` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +38,7 @@ CREATE TABLE `construccion` (
 
 LOCK TABLES `construccion` WRITE;
 /*!40000 ALTER TABLE `construccion` DISABLE KEYS */;
-INSERT INTO `construccion` VALUES (1,'casa','https://i.blogs.es/7cfcd0/casas-en-minecraft/1366_2000.jpeg','Diego','2024-03-07 16:27:01');
+INSERT INTO `construccion` VALUES (1,'casa','https://i.blogs.es/7cfcd0/casas-en-minecraft/1366_2000.jpeg','Diego','2024-03-07 16:27:01'),(23,'Casa con alberca','https://i.ytimg.com/vi/qkKZkhgHjgw/maxresdefault.jpg','Doc','2024-03-18 04:52:24');
 /*!40000 ALTER TABLE `construccion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -78,4 +76,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-03-11 11:02:28
+-- Dump completed on 2024-03-17 22:54:58

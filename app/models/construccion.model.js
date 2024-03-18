@@ -2,7 +2,7 @@ const db = require("../util/database");
 
 module.exports = class Construccion {
     //constructor de la clase.
-    constructor(mi_nombre, mi_imagen, ){
+    constructor(mi_nombre, mi_imagen){
         this.nombre = mi_nombre;
         this.imagen = mi_imagen;
     }
