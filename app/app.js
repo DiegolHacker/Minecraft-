@@ -18,8 +18,12 @@ const path = require('path');
 app.use(express.static(path.join(__dirname, 'public'))); //establecer la carpeta publica
 
 const bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({extended: false }));
 
-app.use(bodyParser.urlencoded({ extended: false }));
+//Agregar protección contra ataques de CSRF
+const csrf = require('csurf');
+const csrfProtection = csrf();
+app.use(csrfProtection); 
 
 // app.post("/construir", (request, response, next) => {
 //   console.log(request.body);

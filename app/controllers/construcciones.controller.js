@@ -4,6 +4,7 @@ const Construccion = require("../models/construccion.model");
 exports.get_construir = (request, response, next) => {
     response.render('construir', {
         username: request.session.username || '',
+        csrfToken: request.csrfToken(),
     }); 
 };
 
@@ -15,7 +16,7 @@ exports.post_construir = (request, response, next) => {
     construccion.save()
         .then(([rows, fieldData]) => {
             response.setHeader('Set-Cookie', 
-            'ultima_construccion=' + request.body.nombre + "; HttpOnly"); //HttpOnly es para que no se pueda ejecutar codigo de js
+                'ultima_construccion=' + request.body.nombre + "; HttpOnly"); //HttpOnly es para que no se pueda ejecutar codigo de js
             response.redirect('/construcciones');
         })
         .catch((error) => {console.log(error)});
