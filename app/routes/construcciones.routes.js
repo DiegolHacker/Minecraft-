@@ -1,29 +1,13 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
+const isAuth = require('../util/is-auth');
+const canView = require('../util/can-view');
+const canBuild = require('../util/can-build');
+const construccionesController = require("../controllers/construcciones.controller");
 
-const construcciones = [
-    {
-        nombre: "casa",
-        imagen: "https://i.blogs.es/7cfcd0/casas-en-minecraft/1366_2000.jpeg",
-    }
-];
-
-
-router.get('/construir', (request, response, next) => {
-    response.render("construir"); 
-});
-
-router.post('/construir', (request, response, next) => {
-    console.log(request.body);
-    construcciones.push(request.body);
-    response.redirect('/');
-});
-
-router.get('/', (request, response, next) => {
-    console.log('Ruta /');
-    response.render("construcciones", {
-        construcciones: construcciones, //mandar variables al template ejs para que se pueda ejecutar, decirle que la variable construcciones en construcciones.ejs corresponde a la varibale construcciones de este archivo.
-    });
-});
+router.get('/construir', isAuth, canBuild, construccionesController.get_construir);
+router.post('/construir', isAuth, canBuild,construccionesController.post_construir);
+router.get("/:construccion_id", isAuth, canView,construccionesController.get_root);
+router.get('/', isAuth, canView,construccionesController.get_root);
 
 module.exports = router;

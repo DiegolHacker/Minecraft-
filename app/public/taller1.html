@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Laboratorio</title>
-        <link rel="stylesheet" href="estilo.css">
+        <link rel="stylesheet" href="css/estilo.css">
         
     </head>
     
@@ -153,9 +153,44 @@
             <p><h3>¿Qué implicaciones tiene utilizar variables globales dentro de funciones?</h3>
                 <p>Si quieres volver a ejecutar la función, según el funcionamiento, debes reiniciar todos los contadores e inicializar de nuevo todas las variables. También cualquier elemento del código puede acceder a esas variables, lo que lo vuelve inseguro.</p>
 
+            <h2>Preguntas Lab 6</h2>     
+            <p><h3>¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?</h3>
+                <p>Para asegurarnos que los datos se almacenen correctamente en la base de datos, sin tipos de dato incorrecto o datos truncados por ser muy largos, para saber que los podremos operar de las formas correctas, para poder decirle al usuario en qué se equivocó, y por seguridad para no correr código arbitrario. </p>
+            <p><h3>¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?</h3>
+                <p>Desactivando js en el navegador, inyectando código en los formularios, mandando solicitudes al servidor directamente, editando el código html o js público.</p>
+            <p><h3>Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?</h3>
+                <p>Debido a que puede dar retroalimentación inmediata a los usuarios sobre si los datos que ingresaron son válidos o correctos, lo que mejora su experiencia. También puede mejorar la velocidad de respuesta al limitar la cantidad de información que se envía y procesa a solo la necesaria.</p>
 
-        </main>
 
+            <h2>Preguntas Lab 13</h2>                
+            <p><h3>¿Qué beneficios encuentras en el estilo MVC?</h3>
+                <p>Facilita la legibilidad y el mantenimiento del código al tener el código agrupado y separado según sus funciones y objetivos. Permite reutilizar código de manera más eficiente y ordenada. Facilita el trabajo en equipo al establecer lugares bien definidos para cada tipo de código. Permite agregar más partes a la aplicación sin afectar a las que estaban cosntruidas previamente.</p>
+            <p><h3>¿Encuentras alguna desventaja en el estilo arquitectónico MVC?</h3>
+                <p>Es un poco más difícil de seguir en etapas iniciales del desarrollo, ya que es más incomodo separ tu código cuando se compone de muy pocas lineas. También puede haber casos donde reutilices código y al querer modificar sola una parte de la aplicación acabes modificando otras.</p>
+
+            <h2>Preguntas Lab 17</h2>
+            <p><h3>¿Qué ventajas tiene escribir el código SQL únicamente en la capa del modelo?</h3>
+                <p>Que se separa la parte de la creación de la base de datos, la lógica para llenar las tablas, y la lógica para hacer las consultas, lo que permite un mayor nivel de complejidad y control. </p>
+            <p><h3>¿Qué es SQL injection y cómo se puede prevenir?</h3>
+                <p>Es cuando un usuario pone una query de SQL como entrada donde solo deberían de haber datos, lo que hace que pueda alterar las tablas y sus datos cómo quiera. Se puede prevenir sanitizando las entradas de datos para que se guarden como string y no se puedan ejecutar.</p>
+            
+            <h2>Preguntas Lab 18</h2>
+            <p><h3>¿Qué otras formas de autentificación existen? </h3>
+                <p>Autentificación de 2 factores: El usuario requiere de un método adicional además de su contraseña, por ejemplo un código o token generado en una aplicación o un mensaje de texto enviado al momento.</p>
+                <p>Autenticación basada en certificados: Cada usuario tiene un certificado digital único que se utiliza para firmar y cifrar la comunicación con el sistema.</p>
+                <p>Autenticación biométrica: Se basan en una característica física del usuario leída a través de sensores para determinar si se trata del usuario, por ejemplo huellas dactilares, retina, reocnocimeinto facial, etc.</p>
+            </main>
+
+            <h2>Preguntas Lab 19</h2>
+            <p><h3>¿En qué consiste el control de acceso basado en roles?</h3></p>
+                <p>Es un modelo de seguridad que se usa para restringir el acceso a información o funciones en un sistema dependeindo de los roles que tengan asignados los usuarios, que parten de sus responsabilidades dentro de una organización.</p>
+            <p><h3>Investiguen y describan 2 sistemas, uno que aplique RBAC y uno que no. Realicen un análisis de las ventajas y desventajas de cada uno con respecto al control de acceso.</h3></p>
+                <p>Microsoft Active Directory es un sistema para manejar directorios en una red de computadoras implementado en Windows e implementa RBAC a través de definir grupos de seguridad, o roles, con sus respectivos permisos y luego los usuarios son añadidos a estos grupos.</p>
+                <p>Como ventajas tiene que es un sistema centralizado y escalable, por lo que es fácil administrar los permisos de una gran cantidad de usuarios y modificar sus permisos en masa, esto también reduce el riesgo de cometer un error al ser casi imposible asignar un permiso que un usuario no debería tener sin un rol específico para ello.</p>
+                <p>Como desventajas es que puede ser más dificil establecer el sistema en un inicio, ya que puede ser necesario crear muchos roles que muy pocos usuarios usen. También es muy fácil hacer que un usuario tenga más permisos de los que necesita al asignarlo a un rol que no se ajusta totalmente a sus responsabilidades.</p>
+                <br><p>Para manejar los permisos de acceso a archivos en Linux tradicionalmente se asignan directamente estos permisos a cada usuario, en lugar de a un rol.</p>
+                <p>Esto tiene como ventaja que es un proceso mucho más sencillo y directo cuando solo existen muy pocos usuarios y queremos ser muy específicos en cuanto a que archivos pueden acceder, pues no se necesita de crear ni asignar roles.</p>
+                <p>De desventaja tiene que al querer escalar el sistema e incluir muchos usuarios se puede volver mucho m;as tardado el estar asignando permisos uno por uno para cada usuario. Además existe un mucho mayor riesgo de errores humanos al poder asignar un permiso que el usuario no debería tener</p>
     
 
     
@@ -168,6 +203,6 @@
             <p>W3schools, (2024). HTML button Tag. Extraído de: https://www.w3schools.com/tags/tag_button.asp</p>
         </footer>
         
-        <script src="lab4js.js"></script>
+        <script src="js/lab4js.js"></script>
     </body>  
 </html>
