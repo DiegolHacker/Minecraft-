@@ -16,21 +16,22 @@
         </div>
     <% } %>
   
+    <% let columns = 0 %>
     <% for (let construccion of construcciones) { %>
-      
+        <% columns++ %>
 
         <div class="column">
             <div class="card">
                 <div class="card-image">
                 <figure class="image is-4by3">
-                    <img src=" <%= construccion.imagen %> " alt="Imagen de <%= construccion.nombre %> ">
+                    <img src="uploads/<%= construccion.imagen %> " alt="Imagen de <%= construccion.nombre %> ">
                 </figure>
                 </div>
                 <div class="card-content">
                 <div class="media">
                     <div class="media-left">
                     <figure class="image is-48x48">
-                        <img src=" <%= construccion.imagen %>" alt="Imagen de <%= construccion.nombre %> ">
+                        <img src="uploads/<%= construccion.imagen %>" alt="Imagen de <%= construccion.nombre %> ">
                     </figure>
                     </div>
                     <div class="media-content">
@@ -48,6 +49,12 @@
                 </div>
             </div>
         </div>
+
+        <% if(columns == 4){ %>
+            </div>
+            <div class ="columns">
+        <% } %>
+
     <% } %>
 
 </div>

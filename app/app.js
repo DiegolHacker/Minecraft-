@@ -20,6 +20,25 @@ app.use(express.static(path.join(__dirname, 'public'))); //establecer la carpeta
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended: false }));
 
+
+const multer = require("multer");
+
+//fileStorage: Es nuestra constante de configuración para manejar el almacenamiento
+const fileStorage = multer.diskStorage({
+  destination: (request, file, callback) => {
+      //'uploads': Es el directorio del servidor donde se subirán los archivos 
+      callback(null, 'public/uploads');
+  },
+  filename: (request, file, callback) => {
+      //aquí configuramos el nombre que queremos que tenga el archivo en el servidor, 
+      //para que no haya problema si se suben 2 archivos con el mismo nombre concatenamos el timestamp
+      callback(null, Number(new Date()).toString() + '-' + file.originalname); // 
+  },
+});
+
+app.use(multer({ storage: fileStorage }).single('imagen')); 
+
+
 //Agregar protección contra ataques de CSRF
 const csrf = require('csurf');
 const csrfProtection = csrf();
@@ -40,6 +59,7 @@ app.use((request, response, next) => {
   console.log("Middleware!");
   next(); //Le permite a la petición avanzar hacia el siguiente middleware
 });
+
 
 
 const rutasUsuarios = require("./routes/usuarios.routes");
