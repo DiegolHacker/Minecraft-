@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, 'public'))); //establecer la carpeta
 
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended: false }));
-
+app.use(bodyParser.json());
 
 const multer = require("multer");
 
