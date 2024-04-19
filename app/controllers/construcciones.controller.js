@@ -61,3 +61,14 @@ exports.get_buscar = (request, response, next) => {
         })
         .catch((error) => {console.log(error)});
 };
+
+exports.post_delete = (request, response, next) => {
+    Construccion.delete(request.body.id)
+        .then(() => {
+            return Construccion.fetch();
+        })
+        .then(([construcciones,fieldData]) => {
+            return response.status(200).json({construcciones: construcciones})
+        })
+        .catch((error) => {console.log(error)});
+};
