@@ -34,5 +34,10 @@ module.exports = class Construccion {
             return this.fetchAll();
         }
     }
+    
+    static search(valor_busqueda) {
+        return db.execute('SELECT * FROM construccion WHERE nombre LIKE ?',
+        ['%' + valor_busqueda + '%']);
+    }
 
 }
